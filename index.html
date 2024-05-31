@@ -126,8 +126,8 @@
 				</div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<h1>Bayu & Putri</h1>
-						<h2 id="guest-name" class="text-center"></h2>
+						<h1>Pernikahan Bayu & Putri</h1>
+						<p id="guest-name" class="text-center"></p>
 					 <script src="script.js"></script>
 						
 						<p>Kami Mengundang Anda Untuk Hadir Di Acara Pernikahan Kami.</p>
@@ -421,7 +421,7 @@
 
 		let guestName = getParameterByName('name');
 		if (guestName) {
-			document.getElementById('guest-name').textContent = `Selamat datang, ${guestName}`;
+			document.getElementById('guest-name').textContent = `${guestName}`;
 		} else {
 			document.getElementById('guest-name').textContent = 'Selamat datang, Tamu';
 		}
