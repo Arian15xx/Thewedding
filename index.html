@@ -127,7 +127,9 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 						<h1>Bayu & Putri</h1>
-						<p style="margin-bottom: 0">Kepada Bapak/Ibu/Saudara/i</p>
+						<h2 id="guest-name" class="text-center"></h2>
+					 <script src="script.js"></script>
+						
 						<p>Kami Mengundang Anda Untuk Hadir Di Acara Pernikahan Kami.</p>
 
 						<button onclick="playAudio()" class="btn btn-primary" id="open-invitation">Buka Undangan</button>
@@ -328,10 +330,10 @@
 						</div>
 
 						<div class="row">
-							<img style="padding: 10px" height="110px" width="300px" src="images/bri.png"/>
+							<img style="padding: 10px" height="110px" width="300px" src="images/bni.png"/>
 							</div>
 							<div class="description">
-								 <h2>XXXXXXXXX</h2>
+								 <h2>1799463621</h2>
 								<h2><button class="btn btn-primary" onclick="myFunction2()">Salin Nomor Rekening<i class="icon-copy"></i></button></h2>
 								<h1>Putri Kurniandari</h1>
 							</div>
@@ -405,6 +407,27 @@
 <script src="lib/lightgallery.js/dist/plugins/autoplay/lg-autoplay.min.js"></script>
 <script src="lib/lightgallery.js/dist/plugins/fullscreen/lg-fullscreen.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+		function getParameterByName(name, url = window.location.href) {
+			name = name.replace(/[\[\]]/g, '\\$&');
+			let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+
+		let guestName = getParameterByName('name');
+		if (guestName) {
+			document.getElementById('guest-name').textContent = `Selamat datang, ${guestName}`;
+		} else {
+			document.getElementById('guest-name').textContent = 'Selamat datang, Tamu';
+		}
+	});
+</script>
+
 
 <script>
 	function playAudio() {
@@ -549,7 +572,7 @@
 }
 
 function myFunction2() {
-    var copyText = "000000000000";
+    var copyText = "1799463621";
 	var accountName = "Putri Kurniandari";
     copyToClipboard(copyText, "Putri Kurniandari");
 }
